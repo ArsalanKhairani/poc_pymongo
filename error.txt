@@ -1,0 +1,31 @@
+[Wed Mar 07 04:12:34.814175 2018] [wsgi:error] [pid 19734] Internal Server Error: /api/admin/v1/server-status/
+[Wed Mar 07 04:12:34.814326 2018] [wsgi:error] [pid 19734] Traceback (most recent call last):
+[Wed Mar 07 04:12:34.814356 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 103, in get_response
+[Wed Mar 07 04:12:34.814381 2018] [wsgi:error] [pid 19734]     resolver_match = resolver.resolve(request.path_info)
+[Wed Mar 07 04:12:34.814396 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 319, in resolve
+[Wed Mar 07 04:12:34.814435 2018] [wsgi:error] [pid 19734]     for pattern in self.url_patterns:
+[Wed Mar 07 04:12:34.814454 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 347, in url_patterns
+[Wed Mar 07 04:12:34.814473 2018] [wsgi:error] [pid 19734]     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+[Wed Mar 07 04:12:34.814480 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 342, in urlconf_module
+[Wed Mar 07 04:12:34.814539 2018] [wsgi:error] [pid 19734]     self._urlconf_module = import_module(self.urlconf_name)
+[Wed Mar 07 04:12:34.814559 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+[Wed Mar 07 04:12:34.814577 2018] [wsgi:error] [pid 19734]     __import__(name)
+[Wed Mar 07 04:12:34.814597 2018] [wsgi:error] [pid 19734]   File "/home/madmin/poc_pymongo/poc_pymongo/urls.py", line 3, in <module>
+[Wed Mar 07 04:12:34.814618 2018] [wsgi:error] [pid 19734]     from api import ServerStatusResource
+[Wed Mar 07 04:12:34.814644 2018] [wsgi:error] [pid 19734]   File "/home/madmin/poc_pymongo/poc_pymongo/api.py", line 13, in <module>
+[Wed Mar 07 04:12:34.814703 2018] [wsgi:error] [pid 19734]     print list(conn['poc_pymongo'].test_collection.find())
+[Wed Mar 07 04:12:34.814729 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/pymongo/cursor.py", line 1169, in next
+[Wed Mar 07 04:12:34.814747 2018] [wsgi:error] [pid 19734]     if len(self.__data) or self._refresh():
+[Wed Mar 07 04:12:34.814769 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/pymongo/cursor.py", line 1068, in _refresh
+[Wed Mar 07 04:12:34.814808 2018] [wsgi:error] [pid 19734]     self.__session = self.__collection.database.client._ensure_session()
+[Wed Mar 07 04:12:34.814872 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/pymongo/mongo_client.py", line 1432, in _ensure_session
+[Wed Mar 07 04:12:34.814889 2018] [wsgi:error] [pid 19734]     return self.start_session(causal_consistency=False)
+[Wed Mar 07 04:12:34.814912 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/pymongo/mongo_client.py", line 1410, in start_session
+[Wed Mar 07 04:12:34.815013 2018] [wsgi:error] [pid 19734]     server_session = self._get_server_session()
+[Wed Mar 07 04:12:34.815036 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/pymongo/mongo_client.py", line 1418, in _get_server_session
+[Wed Mar 07 04:12:34.815044 2018] [wsgi:error] [pid 19734]     return self._topology.get_server_session()
+[Wed Mar 07 04:12:34.815170 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/pymongo/topology.py", line 427, in get_server_session
+[Wed Mar 07 04:12:34.815188 2018] [wsgi:error] [pid 19734]     None)
+[Wed Mar 07 04:12:34.815209 2018] [wsgi:error] [pid 19734]   File "/home/madmin/venv/api-pymongo3/local/lib/python2.7/site-packages/pymongo/topology.py", line 199, in _select_servers_loop
+[Wed Mar 07 04:12:34.815226 2018] [wsgi:error] [pid 19734]     self._error_message(selector))
+[Wed Mar 07 04:12:34.815330 2018] [wsgi:error] [pid 19734] ServerSelectionTimeoutError: No servers found yet
