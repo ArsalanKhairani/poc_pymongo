@@ -15,7 +15,7 @@ export FLASK_APP=app.py
 flask run
 ```
 
-It'll launch a web server that'll be listening on port 5000 (default).
+It'll launch a web server that'll be listening on port 5000 (default). **It'll run fine.**
 
 Reference: http://flask.pocoo.org/docs/0.12/quickstart/
 
